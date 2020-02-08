@@ -23,48 +23,16 @@
 // (Condition 2) not fulfilled).
 
 function bouncingBall(h, bounce, window) {
-    2
-    console.log(h, bounce, window)
-    3
-    // return -1 if any of the params do not meet entry criteria
-    4
-    if (h <= 0 || !(0 < bounce && bounce < 1) || window >= h) return -1;
-    5
-    // create a formula to calculate the number of bounces
-    6
-    // calculate the height of each bounce using loop
-    7
     let bounce_height = h;
-    8
     let bounce_count = 0;
-    9
+
+    if (h <= 0 || !(0 < bounce && bounce < 1) || window >= h) return -1;
+
     while (bounce_height > window) {
-        10
         bounce_height = h * bounce;
-        11
         bounce_height > window ? bounce_count++ : bounce_count
-        12
         h = bounce_height
-        13
         bounce_count++;
-        14
     }
-    15
-    return bounce_count
-    16
-    // stop once bouce's height falls below window's height
-    17
-
-    18
-    // return the result
-    19
-
-    20
-
-    21
-}
-22
-
-23
-bouncingBall(3, 1, 1.5)
-Impressive! You may take your time to refa
+    return bounce_count;
+};
